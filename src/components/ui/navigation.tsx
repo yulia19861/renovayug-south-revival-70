@@ -15,7 +15,7 @@ const Navigation = () => {
                 alt="РеноваЮг - строим будущее вместе" 
                 className="h-20 w-auto max-w-md mx-auto lg:mx-0"
               />
-              <p className="text-lg font-semibold text-muted-foreground mt-2 tracking-wide">
+              <p className="text-lg font-semibold text-muted-foreground -mt-1 tracking-wide">
                 СТРОИМ БУДУЩЕЕ ВМЕСТЕ
               </p>
             </div>
@@ -26,13 +26,13 @@ const Navigation = () => {
             <a href="#" className="text-foreground hover:text-primary transition-colors font-medium text-sm">
               ГЛАВНАЯ
             </a>
-            <a href="#catalog" className="text-foreground hover:text-primary transition-colors font-medium text-sm">
+            <a href="/catalog" className="text-foreground hover:text-primary transition-colors font-medium text-sm">
               КАТАЛОГ
             </a>
-            <a href="#reviews" className="text-foreground hover:text-primary transition-colors font-medium text-sm">
+            <a href="/reviews" className="text-foreground hover:text-primary transition-colors font-medium text-sm">
               ОТЗЫВЫ
             </a>
-            <a href="#mortgage" className="text-foreground hover:text-primary transition-colors font-medium text-sm">
+            <a href="/mortgage" className="text-foreground hover:text-primary transition-colors font-medium text-sm">
               ИПОТЕКА
             </a>
             <a href="#contacts" className="text-foreground hover:text-primary transition-colors font-medium text-sm">

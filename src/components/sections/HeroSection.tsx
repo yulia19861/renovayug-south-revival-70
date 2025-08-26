@@ -1,7 +1,7 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Calculator, Shield, CreditCard, CheckCircle } from "lucide-react";
+import { Calculator, Shield, CreditCard, CheckCircle, Eye } from "lucide-react";
 import heroHouse from "@/assets/hero-house-family.jpg";
 
 const HeroSection = () => {
@@ -56,11 +56,20 @@ const HeroSection = () => {
               </div>
             </div>
 
-            <div className="bg-gradient-to-r from-primary to-primary-light text-white p-6 rounded-2xl animate-pulse-glow hover:animate-float transition-all duration-300">
-              <div className="flex items-center justify-center space-x-2 text-xl font-bold">
-                <span>Реализовали</span>
-                <span className="text-3xl animate-pulse">более 150</span>
-                <span>объектов!</span>
+            <div className="space-y-4">
+              <div className="bg-gradient-to-r from-primary to-primary-light text-white p-6 rounded-2xl animate-pulse-glow hover:animate-float transition-all duration-300">
+                <div className="flex items-center justify-center space-x-2 text-xl font-bold">
+                  <span>Реализовали</span>
+                  <span className="text-3xl animate-pulse">более 150</span>
+                  <span>объектов!</span>
+                </div>
+              </div>
+              
+              <div className="bg-gradient-to-r from-secondary to-secondary-light text-white p-6 rounded-2xl">
+                <div className="flex items-center justify-center space-x-2 text-lg font-semibold">
+                  <Eye className="w-5 h-5" />
+                  <span>Круглосуточное наблюдение через камеры</span>
+                </div>
               </div>
             </div>
           </div>
