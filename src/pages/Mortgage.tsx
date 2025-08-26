@@ -4,6 +4,11 @@ import Footer from "@/components/ui/footer";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Slider } from "@/components/ui/slider";
 import { CreditCard, Calculator, Building, Shield, CheckCircle } from "lucide-react";
 
 const mortgagePrograms = [
@@ -93,51 +98,133 @@ const Mortgage = () => {
             ))}
           </div>
 
-          {/* Bank Calculators */}
+          {/* Universal Mortgage Calculator */}
           <div className="space-y-8">
             <h2 className="text-3xl font-bold text-center text-foreground mb-8">
-              Ипотечные калькуляторы банков
+              Ипотечный калькулятор
             </h2>
             
-            {/* Sberbank Calculator */}
             <Card className="p-8">
               <div className="flex items-center mb-6">
-                <Building className="w-8 h-8 text-primary mr-4" />
-                <h3 className="text-2xl font-bold text-foreground">Калькулятор Сбербанка</h3>
+                <Calculator className="w-8 h-8 text-primary mr-4" />
+                <h3 className="text-2xl font-bold text-foreground">Рассчитайте ипотеку</h3>
               </div>
-              <div className="bg-muted rounded-lg p-8 text-center">
-                <iframe
-                  src="https://domclick.ru/ipoteka/calculator"
-                  width="100%"
-                  height="600"
-                  frameBorder="0"
-                  title="Калькулятор Сбербанка"
-                  className="rounded-lg"
-                />
-                <p className="text-sm text-muted-foreground mt-4">
-                  Официальный калькулятор ипотеки Сбербанка
-                </p>
-              </div>
-            </Card>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {/* Calculator Form */}
+                <div className="space-y-6">
+                  <div>
+                    <Label htmlFor="housePrice">Стоимость дома (₽)</Label>
+                    <Input
+                      id="housePrice"
+                      type="number"
+                      placeholder="5200000"
+                      className="mt-1"
+                    />
+                  </div>
 
-            {/* VTB Calculator */}
-            <Card className="p-8">
-              <div className="flex items-center mb-6">
-                <CreditCard className="w-8 h-8 text-secondary mr-4" />
-                <h3 className="text-2xl font-bold text-foreground">Калькулятор ВТБ</h3>
-              </div>
-              <div className="bg-muted rounded-lg p-8 text-center">
-                <iframe
-                  src="https://www.vtb.ru/personal/ipoteka/calculator/"
-                  width="100%"
-                  height="600"
-                  frameBorder="0"
-                  title="Калькулятор ВТБ"
-                  className="rounded-lg"
-                />
-                <p className="text-sm text-muted-foreground mt-4">
-                  Официальный калькулятор ипотеки ВТБ
-                </p>
+                  <div>
+                    <Label htmlFor="program">Ипотечная программа</Label>
+                    <Select defaultValue="family">
+                      <SelectTrigger className="mt-1">
+                        <SelectValue />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="family">Семейная ипотека - 6%</SelectItem>
+                        <SelectItem value="standard">Стандартная ипотека - 8.5%</SelectItem>
+                        <SelectItem value="domrf">Дом.РФ - 8%</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+
+                  <div>
+                    <Label htmlFor="downPayment">Первоначальный взнос (%)</Label>
+                    <div className="mt-2">
+                      <Slider
+                        id="downPayment"
+                        min={20.1}
+                        max={99}
+                        step={0.1}
+                        defaultValue={[20.1]}
+                        className="w-full"
+                      />
+                      <div className="flex justify-between text-sm text-muted-foreground mt-1">
+                        <span>20.1%</span>
+                        <span id="downPaymentValue">20.1%</span>
+                        <span>99%</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div>
+                    <Label htmlFor="term">Срок кредита (лет)</Label>
+                    <Select defaultValue="25">
+                      <SelectTrigger className="mt-1">
+                        <SelectValue />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="10">10 лет</SelectItem>
+                        <SelectItem value="15">15 лет</SelectItem>
+                        <SelectItem value="20">20 лет</SelectItem>
+                        <SelectItem value="25">25 лет</SelectItem>
+                        <SelectItem value="30">30 лет</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+
+                  <div className="flex items-center space-x-2">
+                    <Checkbox id="maternityCapital" />
+                    <Label htmlFor="maternityCapital">
+                      Использовать материнский капитал (631 000 ₽)
+                    </Label>
+                  </div>
+
+                  <Button className="w-full" size="lg">
+                    <Calculator className="w-4 h-4 mr-2" />
+                    Рассчитать
+                  </Button>
+                </div>
+
+                {/* Results */}
+                <div className="bg-gradient-to-r from-primary/5 to-secondary/5 p-6 rounded-lg">
+                  <h4 className="text-lg font-semibold mb-4 text-center">Результат расчета</h4>
+                  
+                  <div className="space-y-4">
+                    <div className="flex justify-between items-center">
+                      <span className="text-muted-foreground">Стоимость дома:</span>
+                      <span className="font-semibold">5 200 000 ₽</span>
+                    </div>
+                    
+                    <div className="flex justify-between items-center">
+                      <span className="text-muted-foreground">Первоначальный взнос:</span>
+                      <span className="font-semibold text-secondary">1 045 200 ₽</span>
+                    </div>
+                    
+                    <div className="flex justify-between items-center">
+                      <span className="text-muted-foreground">Сумма кредита:</span>
+                      <span className="font-semibold">4 154 800 ₽</span>
+                    </div>
+                    
+                    <div className="border-t pt-4">
+                      <div className="text-center">
+                        <div className="text-sm text-muted-foreground">Ежемесячный платеж</div>
+                        <div className="text-3xl font-bold text-primary">36 289 ₽</div>
+                        <div className="text-xs text-muted-foreground">семейная ипотека 6% на 25 лет</div>
+                      </div>
+                    </div>
+                    
+                    <div className="bg-white p-4 rounded-lg border">
+                      <div className="text-sm text-muted-foreground mb-2">Переплата по кредиту:</div>
+                      <div className="text-lg font-semibold text-secondary">6 731 800 ₽</div>
+                    </div>
+                    
+                    <div className="text-center pt-4">
+                      <Button variant="outline" className="w-full">
+                        Получить одобрение
+                      </Button>
+                    </div>
+                  </div>
+                </div>
               </div>
             </Card>
           </div>
