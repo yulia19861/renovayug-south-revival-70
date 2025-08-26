@@ -2,6 +2,7 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Calculator, Shield, CreditCard, CheckCircle, Eye } from "lucide-react";
+import { CostCalculator } from "@/components/ui/cost-calculator";
 import heroHouse from "@/assets/hero-house-family.jpg";
 
 const HeroSection = () => {
@@ -34,10 +35,12 @@ const HeroSection = () => {
                 </div>
               </div>
 
-              <Button size="lg" className="bg-gradient-to-r from-secondary to-secondary-light hover:shadow-warm hover:scale-105 text-white font-semibold px-8 py-4 text-lg transition-all duration-300 animate-pulse-glow">
-                <Calculator className="w-5 h-5 mr-2" />
-                Рассчитать стоимость дома
-              </Button>
+              <CostCalculator>
+                <Button size="lg" className="bg-gradient-to-r from-secondary to-secondary-light hover:shadow-warm hover:scale-105 text-white font-semibold px-8 py-4 text-lg transition-all duration-300 animate-pulse-glow">
+                  <Calculator className="w-5 h-5 mr-2" />
+                  Рассчитать стоимость дома
+                </Button>
+              </CostCalculator>
             </div>
 
             {/* Features */}
