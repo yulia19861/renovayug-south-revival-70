@@ -7,14 +7,14 @@ import heroHouse from "@/assets/hero-house-family.jpg";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen bg-gradient-to-br from-accent via-background to-muted overflow-hidden">
+    <section className="relative py-20 bg-gradient-to-br from-accent via-background to-muted overflow-hidden">
       {/* Animated background elements */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-20 left-20 w-72 h-72 bg-primary/20 rounded-full blur-3xl animate-float"></div>
         <div className="absolute bottom-20 right-20 w-96 h-96 bg-secondary/20 rounded-full blur-3xl animate-float" style={{animationDelay: '3s'}}></div>
       </div>
       
-      <div className="container mx-auto px-4 py-20 relative z-10">
+      <div className="container mx-auto px-4 py-16 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div className="space-y-8">
@@ -25,7 +25,7 @@ const HeroSection = () => {
               
               <div className="space-y-4">
                 <div className="text-2xl lg:text-3xl">
-                  <span className="text-secondary font-bold">Стоимость строительства от 5 200 000 ₽</span>
+                  <span className="text-secondary font-bold">Стоимость от 5 200 000 ₽</span>
                 </div>
                 <div className="text-xl lg:text-2xl">
                   <span className="text-primary font-semibold">Семейная ипотека 6%</span>

@@ -43,7 +43,7 @@ const FeaturesSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-b from-background to-accent/30">
+    <section className="py-16 bg-gradient-to-b from-background to-accent/30">
       <div className="container mx-auto px-4">
         {/* Features Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">

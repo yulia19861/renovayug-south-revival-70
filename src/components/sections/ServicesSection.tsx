@@ -69,7 +69,7 @@ const ServicesSection = () => {
   ];
 
   return (
-    <section id="services" className="py-20 bg-gradient-to-b from-accent/20 to-background">
+    <section id="services" className="py-16 bg-gradient-to-b from-accent/20 to-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <Badge variant="outline" className="text-primary border-primary mb-4">

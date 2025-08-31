@@ -14,7 +14,7 @@ import {
 
 const ContactSection = () => {
   return (
-    <section id="contacts" className="py-20 bg-gradient-to-b from-background to-accent/20">
+    <section id="contacts" className="py-16 bg-gradient-to-b from-background to-accent/20">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <Badge variant="outline" className="text-primary border-primary mb-4">
