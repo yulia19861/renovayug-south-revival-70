@@ -11,7 +11,7 @@ import {
   Banknote,
   CheckCircle2
 } from "lucide-react";
-import crimeaProjectsMap from "@/assets/crimea-projects-map.jpg";
+import YandexMap from "@/components/ui/yandex-map";
 
 const FeaturesSection = () => {
   const features = [
@@ -96,15 +96,11 @@ const FeaturesSection = () => {
                 <div className="flex items-center space-x-4 mb-6">
                   <MapPin className="w-8 h-8 text-primary" />
                   <div>
-                    <h3 className="text-xl font-bold text-foreground">География работы</h3>
+                    <h3 className="text-xl font-bold text-foreground">География работы - Севастополь</h3>
                   </div>
                 </div>
                 <div className="mb-6">
-                  <img 
-                    src={crimeaProjectsMap}
-                    alt="Карта наших объектов в Крыму"
-                    className="w-full h-48 object-cover rounded-lg border-2 border-primary/20 hover:scale-105 transition-transform duration-300"
-                  />
+                  <YandexMap />
                 </div>
                 <p className="text-foreground mb-4 text-center font-medium">
                   Флажками отмечены наши построенные дома
